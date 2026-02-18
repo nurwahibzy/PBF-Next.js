@@ -10,7 +10,10 @@ const AppShell = (props: AppShellProps) => {
     <main>
       <Navbar />
       {children}
-      <div>footer</div>
+      <br />
+      <footer>
+        <p>© {new Date().getFullYear()} Belajar Next.js</p>
+      </footer>
     </main>
   );
 };
