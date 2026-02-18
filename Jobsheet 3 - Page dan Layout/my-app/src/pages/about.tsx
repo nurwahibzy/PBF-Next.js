@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div>
       <a href="/">Home</a>
-      <h1>Praktikum Next.js Pages Router</h1>
+      <h1>Ini adalah halaman about</h1>
       <p>Nama : Nurwahib Zakki Yahya</p>
       <p>NIM : 2341720154</p>
       <p>Program Studi :D4 Teknik Informatika</p>
