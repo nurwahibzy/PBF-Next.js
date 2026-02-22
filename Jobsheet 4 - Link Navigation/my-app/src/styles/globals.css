@@ -27,3 +27,8 @@ a {
   align-items: center;
   padding: 0 20px;
 }
+
+ul,li{
+  list-style-type: disc;
+  margin-left: 20px;
+}
