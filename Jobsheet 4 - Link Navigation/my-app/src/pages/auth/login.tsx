@@ -10,11 +10,11 @@ const halamanLogin = () => {
   return (
     <div>
       <h1>Halaman Login</h1>
-      <button onClick={handlerLogin}>Login 1</button>
+      <button onClick={handlerLogin}>Login</button>
       <br />
-      <button onClick={() => push("/produk")}>Login 2</button>
+      {/* <button onClick={() => push("/produk")}>Login 2</button>
       <br />
-      <button onClick={() => handlerLogin()}>login 3</button>
+      <button onClick={() => handlerLogin()}>login 3</button> */}
       <br />
       <Link href="/auth/register">Ke Halaman Register</Link>
     </div>
