@@ -36,4 +36,19 @@
     color: #6b7280;
     margin-bottom: 2rem;
   }
+  
+  //  tombol kembali ke halaman utama
+  &__button {
+    padding: 12px 24px;
+    background-color: #3b82f6; 
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #2563eb;
+    }
+  }
 }

@@ -1,5 +1,6 @@
 import styles from "../styles/404.module.scss";
 import Head from "next/head";
+import Link from "next/link";
 const Custom404 = () => {
   return (
     <div className={styles.error}>
@@ -14,6 +15,9 @@ const Custom404 = () => {
       <h1>404</h1>
       <h2>Halaman Tidak Ditemukan</h2>
       <p>Maaf, halaman yang Anda cari tidak ada.</p>
+      <Link href="/" className={styles.error__button}>
+        Kembali ke Home
+      </Link>
     </div>
   );
 };
