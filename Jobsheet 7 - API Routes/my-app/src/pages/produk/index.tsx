@@ -3,10 +3,9 @@ import { useEffect, useState } from "react";
 
 type ProductType = {
     id: number;
-    nama: string;
-    harga: number;
-    ukuran: string;
-    warna: string;
+    name: string;
+    price: number;
+    size: string;
 }
 
 const Kategori = () => {
@@ -35,12 +34,11 @@ const Kategori = () => {
         <div>
             <h1>Daftar Produk</h1>
             <ul>
-                {products.map((product: ProductType) => (
-                    <li key={product.id}>
-                        {product.nama}
-                            <li>Harga: {product.harga}</li>
-                            <li>Ukuran: {product.ukuran}</li>
-                            <li>Warna: {product.warna}</li>
+                {products.map((products: ProductType) => (
+                    <li key={products.id}>
+                        {products.name}
+                            <li>Harga: {products.price}</li>
+                            <li>Ukuran: {products.size}</li>
                     </li>
                 ))}
             </ul>
