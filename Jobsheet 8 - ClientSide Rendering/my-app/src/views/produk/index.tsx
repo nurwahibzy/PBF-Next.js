@@ -9,7 +9,13 @@ type ProductType = {
   category: string;
 };
 
-const TampilanProduk = ({ products, isLoading }: { products: ProductType[]; isLoading: boolean }) => {
+const TampilanProduk = ({
+  products,
+  isLoading,
+}: {
+  products: ProductType[];
+  isLoading: boolean;
+}) => {
   return (
     <div className={styles.produk}>
       <h1 className={styles.produk__title}>Daftar Produk</h1>
