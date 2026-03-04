@@ -1,7 +1,7 @@
 import styles from "@/pages/produk/product.module.scss";
 
 type ProductType = {
-  id: number;
+  id: string;
   name: string;
   price: number;
   image: string;
