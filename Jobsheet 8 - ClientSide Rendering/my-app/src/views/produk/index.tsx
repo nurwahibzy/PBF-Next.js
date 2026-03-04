@@ -9,12 +9,22 @@ type ProductType = {
   category: string;
 };
 
-const TampilanProduk = ({ products }: { products: ProductType[] }) => {
+const TampilanProduk = ({ products, isLoading }: { products: ProductType[]; isLoading: boolean }) => {
   return (
     <div className={styles.produk}>
       <h1 className={styles.produk__title}>Daftar Produk</h1>
       <div className={styles.produk__content}>
-        {products.length > 0 ? (
+        {isLoading ? (
+          [1, 2, 3, 4].map((item) => (
+            <div key={item} className={styles.produk__content__item}>
+              <div className={styles.produk__content__item__image}></div>
+              <div className={styles.produk__content__item__name}></div>
+              <div className={styles.produk__content__item__category}></div>
+              <div className={styles.produk__content__item__size}></div>
+              <div className={styles.produk__content__item__price}></div>
+            </div>
+          ))
+        ) : products.length > 0 ? (
           <>
             {products.map((product: ProductType) => (
               <div key={product.id} className={styles.produk__content__item}>
@@ -40,20 +50,7 @@ const TampilanProduk = ({ products }: { products: ProductType[] }) => {
             ))}{" "}
           </>
         ) : (
-          <div className={styles.produk__content__skeleton}>
-            <div className={styles.produk__content__skeleton__item}></div>
-            <div
-              className={styles.produk__content__skeleton__item__image}
-            ></div>
-            <div className={styles.produk__content__skeleton__item__name}></div>
-            <div
-              className={styles.produk__content__skeleton__item__category}
-            ></div>
-            <div className={styles.produk__content__skeleton__item__size}></div>
-            <div
-              className={styles.produk__content__skeleton__item__price}
-            ></div>
-          </div>
+          <p>Produk tidak ditemukan.</p>
         )}
       </div>
     </div>
