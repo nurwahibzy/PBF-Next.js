@@ -1,13 +1,5 @@
 import TampilanProduk from "@/views/produk";
-
-type ProductType = {
-  id: string;
-  name: string;
-  price: number;
-  image: string;
-  size: string;
-  category: string;
-};
+import {ProductType} from "@/pages/types/product.type";
 
 const halamanProdukServer = (props: { products: ProductType[] }) => {
   const { products } = props;
@@ -27,7 +19,7 @@ export default halamanProdukServer;
 export async function getServerSideProps() {
   const res = await fetch("http://localhost:3000/api/produk");
   const response = await res.json();
-  console.log(response);
+//   console.log(response);
   return {
     props: {
       products: response.data,
