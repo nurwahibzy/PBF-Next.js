@@ -14,23 +14,47 @@ const TampilanProduk = ({ products }: { products: ProductType[] }) => {
     <div className={styles.produk}>
       <h1 className={styles.produk__title}>Daftar Produk</h1>
       <div className={styles.produk__content}>
-        {products.map((product: ProductType) => (
-          <div key={product.id} className={styles.produk__content__item}>
-            <img src={product.image} alt={product.name} width={200} className={styles.produk__content__item__image} />
-            <h4 className={styles.produk__content__item__name}>
-              Nama: {product.name}
-            </h4>
-            <p className={styles.produk__content__item__category}>
-              Kategori: {product.category}
-            </p>
-            <p className={styles.produk__content__item__size}>
-              Ukuran: {product.size}
-            </p>
-            <p className={styles.produk__content__item__price}>
-              Rp {product.price.toLocaleString("id-ID")}
-            </p>
+        {products.length > 0 ? (
+          <>
+            {products.map((product: ProductType) => (
+              <div key={product.id} className={styles.produk__content__item}>
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  width={200}
+                  className={styles.produk__content__item__image}
+                />
+                <h4 className={styles.produk__content__item__name}>
+                  Nama: {product.name}
+                </h4>
+                <p className={styles.produk__content__item__category}>
+                  Kategori: {product.category}
+                </p>
+                <p className={styles.produk__content__item__size}>
+                  Ukuran: {product.size}
+                </p>
+                <p className={styles.produk__content__item__price}>
+                  Rp {product.price.toLocaleString("id-ID")}
+                </p>
+              </div>
+            ))}{" "}
+          </>
+        ) : (
+          <div className={styles.produk__content__skeleton}>
+            <div className={styles.produk__content__skeleton__item}></div>
+            <div
+              className={styles.produk__content__skeleton__item__image}
+            ></div>
+            <div className={styles.produk__content__skeleton__item__name}></div>
+            <div
+              className={styles.produk__content__skeleton__item__category}
+            ></div>
+            <div className={styles.produk__content__skeleton__item__size}></div>
+            <div
+              className={styles.produk__content__skeleton__item__price}
+            ></div>
           </div>
-        ))}
+        )}
       </div>
     </div>
   );
