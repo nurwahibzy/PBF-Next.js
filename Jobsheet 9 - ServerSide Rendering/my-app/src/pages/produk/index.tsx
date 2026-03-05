@@ -13,7 +13,7 @@
 
     return (
       <div>
-        <TampilanProduk products={isLoading ? [] : data?.data} isLoading={isLoading} />
+        <TampilanProduk products={isLoading ? [] : data?.data}/>
       </div>
     );
   };
