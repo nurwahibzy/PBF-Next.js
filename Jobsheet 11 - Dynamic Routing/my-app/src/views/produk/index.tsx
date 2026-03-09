@@ -32,6 +32,9 @@ const TampilanProduk = ({ products }: { products: ProductType[] }) => {
                 <p className={styles.produk__content__item__category}>
                   {products.category}
                 </p>
+                <p className={styles.produk__content__item__size}>
+                  Size: {products.size}
+                </p>
                 <p className={styles.produk__content__item__price}>
                   Rp {products.price.toLocaleString("id-ID")}
                 </p>
