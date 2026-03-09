@@ -2,13 +2,13 @@ import { ProductType } from "@/types/product.type";
 import styles from "../DetailProduk/detailProduk.module.scss";
 
 const DetailProduk = ({ product }: { product: ProductType }) => {
-    console.log("Data yang dikirim ke DetailProduk:", product);
+    // console.log("Data yang dikirim ke DetailProduk:", product);
 
   return (<>
     <h1 className={styles.title}>Detail Produk</h1>
       <div className={styles.produkdetail}>
       <div className={styles.produkdetail__image}>
-        <img src={product.image} alt={product.name} />
+        <img src={product.image && product.image} alt={product.name} />
       </div>
 
       <div className={styles.produkdetail__info}>
