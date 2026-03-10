@@ -5,7 +5,7 @@ const halamanProdukStatic = (props: { products: ProductType[] }) => {
   const { products } = props;
   return (
     <div>
-      <h1>Produk</h1>
+      <h1>Halaman Produk Static</h1>
       <TampilanProduk products={products} />
     </div>
   );
@@ -20,5 +20,6 @@ export async function getStaticProps() {
     props: {
       products: response.data,
     },
+    revalidate: 10,
   };
 }
