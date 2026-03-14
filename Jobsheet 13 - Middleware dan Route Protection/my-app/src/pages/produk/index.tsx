@@ -9,6 +9,8 @@
     // state untuk menyimpan data produk yang diambil dari API
     const [products, setProducts] = useState([]);
 
+    const {push} = useRouter();
+
     const { data, error, isLoading } = useSWR("/api/produk", fetcher);
 
     return (
