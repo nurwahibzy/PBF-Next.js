@@ -1,15 +1,12 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+// import withAuth
+import withAuth from "../src/middleware/withAuth"; 
 
-export function middleware(request: NextRequest) {
-  const isLogin = false;
-  if (isLogin) {
-    return NextResponse.next();
-  } else {
-    return NextResponse.redirect(new URL("/auth/login", request.url));
-  }
+export function Middleware(req: NextRequest) {
+  // Melanjutkan request jika lolos pengecekan auth
+  return NextResponse.next();
 }
 
-export const config = {
-  matcher: ["/produk", "/about"],
-};
+// Memanggil fungsi withAuth untuk memproteksi route "/profile"
+export default withAuth(Middleware, ["/profile"]);
