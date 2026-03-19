@@ -5,6 +5,9 @@ import {
   Firestore,
   getDoc,
   doc,
+  addDoc,
+  where,
+  query,
 } from "firebase/firestore";
 import app from "./firebase";
 
@@ -23,4 +26,30 @@ export async function retrieveDataById(collectionName: string, id: string) {
   const snapshot = await getDoc(doc(db, collectionName, id));
   const data = snapshot.data();
   return data;
+}
+
+export async function signUp(
+  userData: {
+    email: string;
+    fullname: string;
+    password: string;
+  },
+  callback: Function,
+) {
+  const q = query(
+    collection(db, "users"),
+    where("email", "==", userData.email),
+  );
+  const querySnapshot = await getDocs(q);
+  const data = querySnapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
+
+  if (data.length > 0) {
+    callback({ status: "error", message: "User already exists" });
+  } else {
+    // user belum ada, jadi boleh mendaftar
+    callback({ status: "success", message: "User registered successfully" });
+  }
 }
