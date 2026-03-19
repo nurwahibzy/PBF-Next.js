@@ -68,6 +68,12 @@
       }
     }
   }
+  &__error {
+    color: red;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 8px;
+  }
 }
 
 /* Animation */
