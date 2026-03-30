@@ -48,6 +48,7 @@ export const authOptions: NextAuthOptions = {
       if (account?.provider === "credentials" && user) {
         token.email = user.email;
         token.fullname = user.fullname;
+        token.role = user.role;
       }
       return token;
     },
@@ -55,8 +56,11 @@ export const authOptions: NextAuthOptions = {
       if (token.email) {
         session.user.email = token.email;
       }
-      if (token.email) {
+      if (token.fullname) {
         session.user.fullname = token.fullname;
+      }
+      if (token.role) {
+        session.user.role = token.role;
       }
       return session;
     },
