@@ -31,7 +31,8 @@ if (response.status === 200) {
   push("/auth/login");
 } else {
   setIsLoading(false);
-  setError(response.status === 400 ? "Email already exists" : "An error occurred");
+  const responseData = await response.json(); 
+        setError(responseData.name || "an error occurred");
 }};
 
   return (
