@@ -6,6 +6,8 @@ import {
   NextResponse,
 } from "next/server";
 
+const onlyAdmin = ["/admin"];
+
 export default function withAuth(
   middleware: NextMiddleware,
   requireAuth: string[] = [],
@@ -22,6 +24,9 @@ export default function withAuth(
         const Url = new URL("/auth/login", req.url);
         Url.searchParams.set("callbackUrl", req.url);
         return NextResponse.redirect(Url);
+      }
+      if (token.role !== "admin" && onlyAdmin.includes(pathname)) {
+        return NextResponse.redirect(new URL("/", req.url));
       }
     }
     return middleware(req, next);

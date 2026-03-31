@@ -8,5 +8,5 @@ export function Middleware(req: NextRequest) {
   return NextResponse.next();
 }
 
-// Memanggil fungsi withAuth untuk memproteksi route "/profile"
-export default withAuth(Middleware, ["/profile"]);
+// Memanggil fungsi withAuth untuk memproteksi route tertentu
+export default withAuth(Middleware, ["/profile", "/admin"]);
