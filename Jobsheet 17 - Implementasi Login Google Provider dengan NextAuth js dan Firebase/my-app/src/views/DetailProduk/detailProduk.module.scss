@@ -1,0 +1,102 @@
+.container {
+  max-width: 1000px;
+  margin: 32px auto;
+  padding: 0 24px;
+  font-family: "Open Sans", "Nunito", sans-serif;
+}
+
+.produkdetail {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+
+  &__image {
+    flex: 1;
+    max-width: 350px;
+    border: 1px solid #e5e7e9; /* Border tipis pengganti shadow */
+    border-radius: 8px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 1 / 1; /* Biar gambarnya selalu kotak simetris */
+    }
+  }
+
+  &__info {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #212121;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    margin-top: 0;
+  }
+
+  &__price {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ff5722;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: #e5e7e9;
+    margin: 16px 0;
+  }
+
+  &__description {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+
+    p {
+      margin: 8px 0;
+      color: #6d7588;
+    }
+
+    strong {
+      color: #31353b;
+      font-weight: 600;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 16px;
+  }
+}
+
+/* Penyesuaian Responsif untuk mobile */
+@media (max-width: 768px) {
+  .produkdetail {
+    flex-direction: column;
+    align-items: center;
+
+    &__image {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    &__actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    &__btnCart,
+    &__btnBuy {
+      max-width: 100%;
+    }
+  }
+}
