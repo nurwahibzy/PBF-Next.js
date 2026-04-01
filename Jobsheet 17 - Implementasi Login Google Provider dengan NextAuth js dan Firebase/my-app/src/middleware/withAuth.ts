@@ -7,6 +7,7 @@ import {
 } from "next/server";
 
 const onlyAdmin = ["/admin"];
+const onlyEditor = ["/editor"];
 
 export default function withAuth(
   middleware: NextMiddleware,
@@ -26,6 +27,9 @@ export default function withAuth(
         return NextResponse.redirect(Url);
       }
       if (token.role !== "admin" && onlyAdmin.includes(pathname)) {
+        return NextResponse.redirect(new URL("/", req.url));
+      }
+      if (token.role !== "editor" && onlyEditor.includes(pathname)) {
         return NextResponse.redirect(new URL("/", req.url));
       }
     }

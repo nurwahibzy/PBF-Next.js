@@ -9,4 +9,4 @@ export function Middleware(req: NextRequest) {
 }
 
 // Memanggil fungsi withAuth untuk memproteksi route tertentu
-export default withAuth(Middleware, ["/profile", "/admin"]);
+export default withAuth(Middleware, ["/profile", "/admin", "/editor"]);
