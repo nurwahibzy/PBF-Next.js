@@ -13,11 +13,11 @@ const Navbar = () => {
         {data ? (
           <>
             <div className={styles.navbar__user}>
-              Welcome, {data.user?.fullname}
+              Welcome, {data.user?.name}
               {data.user.image && (
                 <img
                   src={data.user.image}
-                  alt={data.user.fullname}
+                  alt={data.user.name}
                   className={styles.navbar__user__image}
                 />
               )}
