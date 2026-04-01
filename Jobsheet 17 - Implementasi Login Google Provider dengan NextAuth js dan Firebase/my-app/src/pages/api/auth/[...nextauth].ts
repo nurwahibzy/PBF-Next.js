@@ -1,7 +1,6 @@
 import {
   signIn,
-  signInWithGoogle,
-  signInWithGithub,
+  signInWithOAuth,
 } from "../../../utils/db/servicefirebase";
 import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
@@ -65,32 +64,14 @@ export const authOptions: NextAuthOptions = {
         token.role = user.role;
       }
 
-      if (account?.provider === "google") {
+      if (account?.provider === "google" || account?.provider === "github") {
         const data = {
           fullname: user.name,
           email: user.email,
           image: user.image,
           type: account.provider,
         };
-        await signInWithGoogle(data, (result: any) => {
-          if (result.status) {
-            token.fullname = result.data.name;
-            token.email = result.data.email;
-            token.image = result.data.image;
-            token.type = result.data.type;
-            token.role = result.data.role;
-          }
-        });
-      }
-
-      if (account?.provider === "github") {
-        const data = {
-          fullname: user.name,
-          email: user.email,
-          image: user.image,
-          type: account.provider,
-        };
-        await signInWithGithub(data, (result: any) => {
+        await signInWithOAuth(data, (result: any) => {
           if (result.status) {
             token.fullname = result.data.name;
             token.email = result.data.email;
