@@ -15,28 +15,7 @@ const TampilanLogin = () => {
     event.preventDefault();
     setError("");
     setIsLoading(true);
-    // const form = event.currentTarget;
-    // const formData = new FormData(event.currentTarget);
-    // const email = formData.get("email") as string;
-    // const fullname = formData.get("Fullname") as string;
-    // const password = formData.get("Password") as string;
-    // const response = await fetch("/api/login", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ email, fullname, password }),
-    // });
 
-    // if (response.status === 200) {
-    //   form.reset();
-    //   setIsLoading(false);
-    //   push("/auth/login");
-    // } else {
-    //   setIsLoading(false);
-    //   const responseData = await response.json();
-    //   setError(responseData.name || "an error occurred");
-    // }
     try {
       const res = await signIn("credentials", {
         redirect: false,
@@ -48,7 +27,7 @@ const TampilanLogin = () => {
       if (!res?.error) {
         setIsLoading(false);
         push(callbackUrl);
-      }else{
+      } else {
         setIsLoading(false);
         setError(res.error || "Login failed");
       }
@@ -98,6 +77,15 @@ const TampilanLogin = () => {
             disabled={isLoading}
           >
             {isLoading ? "Loading..." : "Login"}
+          </button>
+          <br />
+          <br />
+          <button
+            onClick={() => signIn("google", { callbackUrl, redirect: false })}
+            className={styles.login__form__item__button}
+            disabled={isLoading}
+          >
+            {isLoading ? "Loading..." : "Sign In with Google"}
           </button>
         </form>
         <br />
