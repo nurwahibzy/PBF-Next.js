@@ -1,3 +1,10 @@
+import dynamic from "next/dynamic";
+
+const FormEditorDinamis = dynamic(() => import('@/components/formeditor'), {
+  loading: () => <p>Sedang memuat alat editor teks...</p>,
+  ssr: false // Mematikan SSR karena ini adalah form interaktif
+});
+
 const HalamanEditor = () => {
   return (
     <div>
@@ -10,6 +17,7 @@ const HalamanEditor = () => {
           Anda telah berhasil login dengan akun yang memiliki role editor. <br />
         </p>
       </div>
+      <FormEditorDinamis />
     </div>
   );
 };
