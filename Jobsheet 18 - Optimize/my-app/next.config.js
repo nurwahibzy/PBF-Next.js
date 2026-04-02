@@ -12,6 +12,15 @@ const nextConfig = {
         protocol: "https",
         hostname: "lh3.googleusercontent.com", // Untuk avatar Google
       },
+      // Menambahkan sumber gambar eksternal 
+      {
+        protocol: "https",
+        hostname: "www.static-src.com", 
+      },
+      {
+        protocol: "https",
+        hostname: "encrypted-tbn0.gstatic.com", 
+      },
     ],
   },
 };
