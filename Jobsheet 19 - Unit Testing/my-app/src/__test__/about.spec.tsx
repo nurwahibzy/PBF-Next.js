@@ -1,9 +1,12 @@
-import {render} from '@testing-library/react';
-import About from '@/pages/about';
+import { render, screen } from "@testing-library/react";
+import AboutPage from "@/pages/about";
 
-describe('About', () => {
-  it('renders the about page', () => {
-    const page = render(<About />);
+describe("About Page", () => {
+  it("renders about page correctly", () => {
+    const page = render(<AboutPage />);
+    expect(screen.getByTestId("title").textContent).toBe(
+      "Ini adalah halaman about"
+    );
     expect(page).toMatchSnapshot();
   });
 });

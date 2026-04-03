@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`About renders the about page 1`] = `
+exports[`About Page renders about page correctly 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
@@ -11,7 +11,9 @@ exports[`About renders the about page 1`] = `
         >
           Home
         </a>
-        <h1>
+        <h1
+          data-testid="title"
+        >
           Ini adalah halaman about
         </h1>
         <p>
@@ -33,7 +35,9 @@ exports[`About renders the about page 1`] = `
       >
         Home
       </a>
-      <h1>
+      <h1
+        data-testid="title"
+      >
         Ini adalah halaman about
       </h1>
       <p>
