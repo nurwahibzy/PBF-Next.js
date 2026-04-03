@@ -29,6 +29,7 @@ const Navbar = () => {
               )}
             </div>
             <button
+              name="sign out"
               className={`${styles.navbar__button} ${styles["navbar__button--danger"]}`}
               onClick={() => signOut()}
             >
@@ -37,6 +38,7 @@ const Navbar = () => {
           </>
         ) : (
           <button
+            name="sign in"
             className={`${styles.navbar__button} ${styles["navbar__button--primary"]}`}
             onClick={() => signIn()}
           >

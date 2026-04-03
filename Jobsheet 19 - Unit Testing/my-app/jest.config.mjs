@@ -10,15 +10,15 @@ const config = {
   collectCoverage: true,
   collectCoverageFrom: [
     "**/*.{ts,tsx}",
-    "**/*.d.ts",
-    "!**/node_modules/**",
-    "!**/.next/**",
     "!**/coverage/**",
     "!**/jest.config.mjs",
     "!**/next.config.js",
     "!**/types/**",
     "!**/views/**",
     "!**/pages/api/**",
+    "!**/*.d.ts",               
+    "!**/_app.tsx",             
+    "!**/_document.tsx",
   ],
 };
 
