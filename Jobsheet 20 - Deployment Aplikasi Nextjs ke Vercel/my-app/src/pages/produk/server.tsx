@@ -17,7 +17,7 @@ export default halamanProdukServer;
 // dan akan mengembalikan data produk yang akan diteruskan 
 // ke komponen halamanProdukServer sebagai props
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/produk");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/produk`);
   const response = await res.json();
 //   console.log(response);
   return {
