@@ -17,6 +17,7 @@ exports[`Tampilan Produk renders produk page correctly 1`] = `
           </h1>
           <div
             class="produk__content"
+            data-testid="product-list"
           >
             <div
               class="produk__content__skeleton"
@@ -151,6 +152,7 @@ exports[`Tampilan Produk renders produk page correctly 1`] = `
         </h1>
         <div
           class="produk__content"
+          data-testid="product-list"
         >
           <div
             class="produk__content__skeleton"

@@ -17,7 +17,9 @@ const TampilanProduk = ({ products }: { products: ProductType[] }) => {
       <h1 className={styles.produk__title} data-testid="title">
         Daftar Produk
       </h1>
-      <div className={styles.produk__content}>
+      <div className={styles.produk__content}
+        data-testid="product-list"
+      >
         {products && products.length > 0 ? (
           <>
             {products.map((product: ProductType) => (
@@ -55,9 +57,13 @@ const TampilanProduk = ({ products }: { products: ProductType[] }) => {
               <div className={styles.produk__content__skeleton__image}></div>
               <div className={styles.produk__content__skeleton__info}>
                 <div className={styles.produk__content__skeleton__name}></div>
-                <div className={styles.produk__content__skeleton__name_short}></div>
+                <div
+                  className={styles.produk__content__skeleton__name_short}
+                ></div>
                 <div className={styles.produk__content__skeleton__price}></div>
-                <div className={styles.produk__content__skeleton__category}></div>
+                <div
+                  className={styles.produk__content__skeleton__category}
+                ></div>
               </div>
             </div>
           ))

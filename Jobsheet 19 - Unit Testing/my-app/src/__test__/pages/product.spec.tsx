@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import '@testing-library/jest-dom';
 import TampilanProduk from "@/pages/produk";
 
 jest.mock("next/router", () => ({
@@ -23,5 +24,7 @@ describe("Tampilan Produk", () => {
     const page = render(<TampilanProduk />);
     expect(screen.getByTestId("title").textContent).toBe("Daftar Produk");
     expect(page).toMatchSnapshot();
+    // menambahkan test untuk komponen
+      expect(screen.getByTestId("product-list")).toBeInTheDocument();
   });
 });
